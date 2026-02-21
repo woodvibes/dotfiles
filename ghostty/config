@@ -1,8 +1,7 @@
-# theme = Catppuccin Mocha
+theme = Catppuccin Mocha
 # theme = Kanagawa Wave
 # theme = Terafox
 # theme = Tomorrow Night Burns
-theme = Black Metal (Bathory)
+# theme = Black Metal (Bathory)
 
-
-split-divider-color = #444444
+# split-divider-color = #444444
