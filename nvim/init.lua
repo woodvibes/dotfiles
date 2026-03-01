@@ -65,10 +65,11 @@ require("nvim-treesitter").install({ "go" }):wait(300000)
 require("nvim-treesitter").install({ "javascript" }):wait(300000)
 require("nvim-treesitter").install({ "markdown" }):wait(300000)
 require("nvim-treesitter").install({ "typescript" }):wait(300000)
+require("nvim-treesitter").install({ "c" }):wait(30000)
 
 -- set up highlighting
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "go", "lua", "markdown" },
+	pattern = { "c", "go", "lua", "markdown" },
 	callback = function()
 		-- syntax highlighting
 		vim.treesitter.start()
@@ -81,6 +82,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- conform
 require("conform").setup({
 	formatters_by_ft = {
+		c = { "clang-format" },
 		lua = { "stylua" },
 		markdown = { "prettier" },
 	},
