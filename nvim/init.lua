@@ -35,6 +35,7 @@ vim.pack.add({
 -- set up language servers
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("gopls")
+vim.lsp.enable("clangd")
 
 -- diagnostics
 -- ref: https://neovim.io/doc/user/diagnostic.html#vim.diagnostic.Opts
@@ -114,24 +115,22 @@ require("telescope").load_extension("fzf")
 
 local telescopeBuiltin = require("telescope.builtin")
 vim.keymap.set("n", "<space>ff", telescopeBuiltin.find_files, { desc = "Telescope find files" })
-
 vim.keymap.set(
 	"n",
-	"<space>flt",
+	"<space>ftd",
 	telescopeBuiltin.lsp_type_definitions,
 	{ desc = "Telescope find LSP type definitions" }
 )
-
 vim.keymap.set(
 	"n",
-	"<space>fls",
+	"<space>fds",
 	telescopeBuiltin.lsp_document_symbols,
 	{ desc = "Telescope find LSP document symbols" }
 )
-
-vim.keymap.set("n", "<space>fli", telescopeBuiltin.lsp_implementations, { desc = "Telescope find LSP implementations" })
-
-vim.keymap.set("n", "<space>flr", telescopeBuiltin.lsp_references, { desc = "Telescope find LSP references" })
+vim.keymap.set("n", "<space>fi", telescopeBuiltin.lsp_implementations, { desc = "Telescope find LSP implementations" })
+vim.keymap.set("n", "<space>fr", telescopeBuiltin.lsp_references, { desc = "Telescope find LSP references" })
+vim.keymap.set("n", "<space>fd", telescopeBuiltin.lsp_definitions, { desc = "Telescope find LSP definitions" })
+vim.keymap.set("n", "<space>fws", telescopeBuiltin.lsp_workspace_symbols, { desc = "Telescope find LSP workspace symbols" })
 
 -- theme set up
 vim.cmd.colorscheme("catppuccin")
