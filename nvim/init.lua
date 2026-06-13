@@ -36,6 +36,7 @@ vim.pack.add({
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("gopls")
 vim.lsp.enable("clangd")
+vim.lsp.enable("ts_ls")
 
 -- diagnostics
 -- ref: https://neovim.io/doc/user/diagnostic.html#vim.diagnostic.Opts
@@ -66,11 +67,10 @@ require("nvim-treesitter").install({ "go" }):wait(300000)
 require("nvim-treesitter").install({ "javascript" }):wait(300000)
 require("nvim-treesitter").install({ "markdown" }):wait(300000)
 require("nvim-treesitter").install({ "typescript" }):wait(300000)
-require("nvim-treesitter").install({ "c" }):wait(30000)
 
 -- set up highlighting
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "c", "go", "lua", "markdown" },
+	pattern = { "go", "lua", "markdown", "c" },
 	callback = function()
 		-- syntax highlighting
 		vim.treesitter.start()
@@ -83,7 +83,6 @@ vim.api.nvim_create_autocmd("FileType", {
 -- conform
 require("conform").setup({
 	formatters_by_ft = {
-		c = { "clang-format" },
 		lua = { "stylua" },
 		markdown = { "prettier" },
 	},
@@ -115,22 +114,31 @@ require("telescope").load_extension("fzf")
 
 local telescopeBuiltin = require("telescope.builtin")
 vim.keymap.set("n", "<space>ff", telescopeBuiltin.find_files, { desc = "Telescope find files" })
+
 vim.keymap.set(
 	"n",
-	"<space>ftd",
+	"<space>ft",
 	telescopeBuiltin.lsp_type_definitions,
 	{ desc = "Telescope find LSP type definitions" }
 )
+
 vim.keymap.set(
 	"n",
-	"<space>fds",
+	"<space>fs",
 	telescopeBuiltin.lsp_document_symbols,
 	{ desc = "Telescope find LSP document symbols" }
 )
+
 vim.keymap.set("n", "<space>fi", telescopeBuiltin.lsp_implementations, { desc = "Telescope find LSP implementations" })
+
 vim.keymap.set("n", "<space>fr", telescopeBuiltin.lsp_references, { desc = "Telescope find LSP references" })
+
 vim.keymap.set("n", "<space>fd", telescopeBuiltin.lsp_definitions, { desc = "Telescope find LSP definitions" })
-vim.keymap.set("n", "<space>fws", telescopeBuiltin.lsp_workspace_symbols, { desc = "Telescope find LSP workspace symbols" })
+
+vim.keymap.set("n", "<space>fg", telescopeBuiltin.live_grep, { desc = "Telescope live grep" })
+
+-- gitgutter
+vim.g.gitgutter_highlight_lines = 1
 
 -- theme set up
 vim.cmd.colorscheme("catppuccin")
