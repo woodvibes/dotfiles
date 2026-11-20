@@ -5,6 +5,9 @@
 ### Fixed
 
 - Go files no longer formatted twice on save; conform handles formatting and the Go autocmd only organizes imports
+- Go organize-imports on save no longer emits the `make_range_params`
+  `position_encoding` warning; it now only runs when gopls is attached and
+  uses gopls' offset encoding for requests and edits
 
 ## 2026-02-21
 
