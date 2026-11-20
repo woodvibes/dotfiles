@@ -5,6 +5,7 @@
 ### Changed
 
 - consolidated language server setup into a single `vim.lsp.enable` call
+- configured lua_ls to recognize the Neovim runtime (LuaJIT, `$VIMRUNTIME` library) so `vim.*` globals resolve with docs and completion
 
 ### Fixed
 

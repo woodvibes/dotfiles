@@ -48,6 +48,21 @@ vim.pack.add({
 })
 
 -- set up language servers
+
+-- make lua_ls aware of the neovim runtime (vim.* globals, API docs, completion)
+-- ref: https://github.com/neovim/nvim-lspconfig/blob/master/lsp/lua_ls.lua
+vim.lsp.config("lua_ls", {
+	settings = {
+		Lua = {
+			runtime = { version = "LuaJIT" },
+			workspace = {
+				checkThirdParty = false,
+				library = { vim.env.VIMRUNTIME },
+			},
+		},
+	},
+})
+
 vim.lsp.enable({ "lua_ls", "gopls", "clangd", "ts_ls" })
 
 -- diagnostics
