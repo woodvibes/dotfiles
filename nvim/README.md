@@ -13,6 +13,8 @@
 - [gopls](https://go.dev/gopls/) - Go
 - [clangd](https://clangd.llvm.org/installation) - C
 - [typescript-language-server](https://github.com/typescript-language-server/typescript-language-server) - ts_ls (requires Node.js)
+- [marksman](https://github.com/artempyanykh/marksman/blob/main/docs/install.md) - Markdown
+- [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted#usage) - eslint via `vscode-eslint-language-server` (requires Node.js); only attaches in projects with an ESLint config file
 
 ### Formatters
 

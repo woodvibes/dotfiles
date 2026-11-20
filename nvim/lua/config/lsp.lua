@@ -12,7 +12,13 @@ vim.lsp.config("lua_ls", {
 	},
 })
 
-vim.lsp.enable({ "lua_ls", "gopls", "clangd", "ts_ls" })
+-- leave js/ts formatting to ts_ls; conform's lsp fallback would otherwise format with both
+-- ref: https://github.com/neovim/nvim-lspconfig/blob/master/lsp/eslint.lua
+vim.lsp.config("eslint", {
+	settings = { format = false },
+})
+
+vim.lsp.enable({ "lua_ls", "gopls", "clangd", "ts_ls", "marksman", "eslint" })
 
 -- completion
 -- ref: https://neovim.io/doc/user/lsp.html#lsp-completion

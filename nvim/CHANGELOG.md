@@ -4,6 +4,9 @@
 
 ### Added
 
+- marksman language server for Markdown
+- eslint language server for JS/TS diagnostics and code actions; its
+  formatting is disabled so ts_ls remains the only formatter on save
 - enabled built-in LSP completion with autotrigger for any attached server that supports it
 
 ### Changed
