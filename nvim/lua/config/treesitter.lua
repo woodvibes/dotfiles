@@ -10,10 +10,20 @@ require("nvim-treesitter").install({ "go" }):wait(300000)
 require("nvim-treesitter").install({ "javascript" }):wait(300000)
 require("nvim-treesitter").install({ "markdown" }):wait(300000)
 require("nvim-treesitter").install({ "typescript" }):wait(300000)
+require("nvim-treesitter").install({ "tsx" }):wait(300000)
 
 -- set up highlighting
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "go", "lua", "markdown", "c" },
+	pattern = {
+		"go",
+		"lua",
+		"markdown",
+		"c",
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact",
+	},
 	callback = function()
 		-- syntax highlighting
 		vim.treesitter.start()

@@ -8,6 +8,8 @@
 - eslint language server for JS/TS diagnostics and code actions; its
   formatting is disabled so ts_ls remains the only formatter on save
 - enabled built-in LSP completion with autotrigger for any attached server that supports it
+- treesitter highlighting and folds for JavaScript, TypeScript, JSX, and TSX buffers
+- `tsx` treesitter parser, since the `typescript` parser can't parse TSX
 
 ### Changed
 
