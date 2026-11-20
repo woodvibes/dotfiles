@@ -9,6 +9,13 @@
   `position_encoding` warning; it now only runs when gopls is attached and
   uses gopls' offset encoding for requests and edits
 
+### Removed
+
+- leftover lazy.nvim files no longer loaded by `init.lua`
+  - `lua/config/lazy.lua`
+  - `lua/plugins/conform.lua`
+  - `lazy-lock.json`
+
 ## 2026-02-21
 
 ### Added
