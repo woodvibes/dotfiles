@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-11-20
+
+### Fixed
+
+- Go files no longer formatted twice on save; conform handles formatting and the Go autocmd only organizes imports
+
 ## 2026-02-21
 
 ### Added

@@ -160,6 +160,7 @@ vim.cmd.colorscheme("catppuccin")
 
 -- extra for Go
 -- ref: https://go.dev/gopls/editor/vim#neovim
+-- organize imports only; formatting is handled by conform's LSP fallback
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*.go",
 	callback = function()
@@ -179,6 +180,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 				end
 			end
 		end
-		vim.lsp.buf.format({ async = false })
 	end,
 })
