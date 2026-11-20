@@ -2,6 +2,10 @@
 
 ## 2026-11-20
 
+### Added
+
+- enabled built-in LSP completion with autotrigger for any attached server that supports it
+
 ### Changed
 
 - consolidated language server setup into a single `vim.lsp.enable` call
