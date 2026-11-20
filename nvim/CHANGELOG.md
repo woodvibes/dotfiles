@@ -8,6 +8,9 @@
 
 ### Changed
 
+- split `init.lua` into modules under `lua/config/` (options, plugins, lsp,
+  treesitter, format, telescope, git, theme, go); `init.lua` now only requires
+  them in load order, with no change in behavior
 - consolidated language server setup into a single `vim.lsp.enable` call
 - configured lua_ls to recognize the Neovim runtime (LuaJIT, `$VIMRUNTIME` library) so `vim.*` globals resolve with docs and completion
 
