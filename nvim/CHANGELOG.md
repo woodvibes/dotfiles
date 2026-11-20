@@ -10,6 +10,7 @@
 - enabled built-in LSP completion with autotrigger for any attached server that supports it
 - treesitter highlighting and folds for JavaScript, TypeScript, JSX, and TSX buffers
 - `tsx` treesitter parser, since the `typescript` parser can't parse TSX
+- prettier formatting on save for JSON and JSONC files (e.g. `tsconfig.json`, `.eslintrc.json`)
 
 ### Changed
 
