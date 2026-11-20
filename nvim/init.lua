@@ -48,10 +48,7 @@ vim.pack.add({
 })
 
 -- set up language servers
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("gopls")
-vim.lsp.enable("clangd")
-vim.lsp.enable("ts_ls")
+vim.lsp.enable({ "lua_ls", "gopls", "clangd", "ts_ls" })
 
 -- diagnostics
 -- ref: https://neovim.io/doc/user/diagnostic.html#vim.diagnostic.Opts

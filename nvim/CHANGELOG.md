@@ -2,6 +2,10 @@
 
 ## 2026-11-20
 
+### Changed
+
+- consolidated language server setup into a single `vim.lsp.enable` call
+
 ### Fixed
 
 - Go files no longer formatted twice on save; conform handles formatting and the Go autocmd only organizes imports
