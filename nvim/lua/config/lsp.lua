@@ -27,6 +27,7 @@ vim.lsp.config("gopls", {
 			staticcheck = true,
 			analyses = {
 				unusedparams = true,
+				-- suggest lifting a leading `if cond { break }` into the for loop's condition
 				QF1006 = true,
 			},
 		},
