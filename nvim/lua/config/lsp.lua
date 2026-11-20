@@ -18,6 +18,21 @@ vim.lsp.config("eslint", {
 	settings = { format = false },
 })
 
+-- gofumpt formatting (used on save via conform's lsp fallback) and extra analyzers
+-- ref: https://go.dev/gopls/settings
+vim.lsp.config("gopls", {
+	settings = {
+		gopls = {
+			gofumpt = true,
+			staticcheck = true,
+			analyses = {
+				unusedparams = true,
+				QF1006 = true,
+			},
+		},
+	},
+})
+
 vim.lsp.enable({ "lua_ls", "gopls", "clangd", "ts_ls", "marksman", "eslint" })
 
 -- completion

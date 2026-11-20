@@ -11,6 +11,8 @@
 
 ### Changed
 
+- configured gopls to format with gofumpt (applied on save via conform's LSP
+  fallback) and enabled staticcheck plus the `unusedparams` and `QF1006` analyzers
 - split `init.lua` into modules under `lua/config/` (options, plugins, lsp,
   treesitter, format, telescope, git, theme, go); `init.lua` now only requires
   them in load order, with no change in behavior
