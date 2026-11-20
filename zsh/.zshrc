@@ -69,6 +69,17 @@ function clear_cache() {
   go clean -modcache
 }
 
+### LOCAL OVERRIDES ###
+
+# machine-specific config that shouldn't be committed lives in
+# .zshrc.local next to this file (git-ignored)
+ZSHRC_LOCAL="${${(%):-%x}:A:h}/.zshrc.local"
+if [[ -f "$ZSHRC_LOCAL" ]]; then
+  echo "	Loading local overrides..."
+  source "$ZSHRC_LOCAL"
+fi
+unset ZSHRC_LOCAL
+
 # Uncomment here and in ~/.zshenv to profile shell loading
 # zprof
 
